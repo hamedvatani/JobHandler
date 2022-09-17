@@ -1,9 +1,10 @@
-﻿namespace JobHandler.Sender;
-
-public abstract class SenderConfiguration
+﻿namespace JobHandler.Sender
 {
-    public bool Durable { get; set; } = false;
-    public string GroupName { get; set; } = "";
-    public int Timeout { get; set; } = 10000;
-    public int MaxRetries { get; set; } = 3;
+    public abstract class SenderConfiguration
+    {
+        public bool Durable { get; set; } = false;
+        public string GroupName { get; set; } = "";
+        public int Timeout { get; set; } = 10000;
+        public int MaxRetries { get; set; } = 3;
+    }
 }

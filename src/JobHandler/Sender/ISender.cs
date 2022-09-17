@@ -1,7 +1,10 @@
-﻿namespace JobHandler.Sender;
+﻿using System.Threading.Tasks;
 
-public interface ISender
+namespace JobHandler.Sender
 {
-    void Send<T>(T job);
-    Task SendAsync<T>(T job);
+    public interface ISender
+    {
+        void Send<T>(T job);
+        Task SendAsync<T>(T job);
+    }
 }

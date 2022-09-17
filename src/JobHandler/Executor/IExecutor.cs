@@ -1,7 +1,12 @@
-﻿namespace JobHandler.Executor;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
 
-public interface IExecutor<T>
+namespace JobHandler.Executor
 {
-    void StartExecution(Func<T, CancellationToken, FuncResult> executor, Action<T, List<FuncResult>>? failAction);
-    void StopExecution();
+    public interface IExecutor<T>
+    {
+        void StartExecution(Func<T, CancellationToken, FuncResult> executor, Action<T, List<FuncResult>>? failAction);
+        void StopExecution();
+    }
 }

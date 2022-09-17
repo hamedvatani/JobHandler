@@ -1,24 +1,27 @@
-﻿namespace JobHandler.Executor;
+﻿using System;
 
-public class FuncResult
+namespace JobHandler.Executor
 {
-    public bool IsSuccess { get; set; }
-    public bool IsTimeout { get; set; }
-    public string Message { get; set; } = "";
-    public DateTime TimeStamp { get; set; } = DateTime.Now;
-
-    public static FuncResult Success()
+    public class FuncResult
     {
-        return new FuncResult {IsSuccess = true};
-    }
+        public bool IsSuccess { get; set; }
+        public bool IsTimeout { get; set; }
+        public string Message { get; set; } = "";
+        public DateTime TimeStamp { get; set; } = DateTime.Now;
 
-    public static FuncResult Timeout()
-    {
-        return new FuncResult {IsTimeout = true, Message = "Timeout"};
-    }
+        public static FuncResult Success()
+        {
+            return new FuncResult { IsSuccess = true };
+        }
 
-    public static FuncResult Fail(string message)
-    {
-        return new FuncResult {IsSuccess = false, Message = message};
+        public static FuncResult Timeout()
+        {
+            return new FuncResult { IsTimeout = true, Message = "Timeout" };
+        }
+
+        public static FuncResult Fail(string message)
+        {
+            return new FuncResult { IsSuccess = false, Message = message };
+        }
     }
 }
